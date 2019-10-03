@@ -1,9 +1,31 @@
-python 
-django
-Html
-css
-Database
+Model architecture planning
 
-front end
-Materialize by google
-Beautiful soup - web scriping
+Membership Model
+    -slug instead of ID IE COURSE-NUMBER-1
+    -type (free, pro, enterprise)
+    -Sripe plan Id 
+
+UserMembership
+    -User                    (foreign to default user)
+    -stripe customer ID
+    -Membership Type         (foreign to membership)
+
+Subscription 
+    - User mambership                (foreign key to UserMembership)
+    -stripe subscription id
+    - active
+
+COURSE
+    -slug
+    -title
+    -description
+    -allowed membership (foreign key to mambership)
+
+Lesson
+    -slug
+    -title
+    -description
+    -COURSE  (foreign key to COURSE)
+    -position int 
+    -video
+    -Thumbnail
